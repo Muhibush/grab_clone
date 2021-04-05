@@ -79,17 +79,20 @@ class Header extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        AutoSizeText(
-                          'Kebutuhan Muslim Terpercaya ...',
-                          maxLines: 1,
-                          minFontSize: 1,
-                          style: TextStyle(
-                            fontSize: 42.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
+                        Container(
+                          width: 614.w,
+                          child: AutoSizeText(
+                            'Kebutuhan Muslim Terpercaya ...',
+                            maxLines: 1,
+                            minFontSize: 1,
+                            style: TextStyle(
+                              fontSize: 42.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
                         ),
-                        SizedBox(width: 17.w),
+                        SizedBox(width: 14.w),
                         Container(
                           width: 50.w,
                           height: 50.w,

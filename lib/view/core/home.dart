@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grab_clone/view/core/widgets/discover.dart';
 import 'package:grab_clone/view/core/widgets/features.dart';
-import 'file:///D:/lab/grab_clone/lib/view/core/widgets/header.dart';
+import 'package:grab_clone/view/core/widgets/header.dart';
 import 'package:grab_clone/view/core/widgets/savings.dart';
 
 class Home extends StatefulWidget {
