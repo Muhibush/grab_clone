@@ -13,6 +13,7 @@ class _CoreState extends State<Core> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
         body: DefaultTabController(
           initialIndex: 0,

@@ -10,10 +10,9 @@ class Features extends StatelessWidget {
       height: 775.w,
       width: 1.sw,
       decoration: BoxDecoration(
-          color: Colors.white,
           border: Border(
-            bottom: BorderSide(width: 6.w, color: Color(0xFFf7f7f7)),
-          )),
+        bottom: BorderSide(width: 6.w, color: Color(0xFFf7f7f7)),
+      )),
       child: Column(
         children: [
           Padding(
