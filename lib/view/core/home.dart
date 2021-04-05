@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grab_clone/view/core/header.dart';
+import 'file:///D:/lab/grab_clone/lib/view/core/widgets/header.dart';
+import 'package:grab_clone/view/core/widgets/savings.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,11 +17,9 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
       padding: const EdgeInsets.all(0),
       children: [
         Header(),
-        SizedBox(
-          height: 49.w,
-        ),
+        Savings(),
         Container(
-          color: Colors.red,
+          color: Colors.white,
           height: 490.w,
           width: 1.sw,
         ),
@@ -36,7 +35,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
           height: 49.w,
         ),
         Container(
-          color: Colors.yellow,
+          color: Colors.transparent,
           height: 490.w,
           width: 1.sw,
         ),
