@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grab_clone/core/home.dart';
+import 'package:grab_clone/bloc/main_page_cubit.dart';
+import 'package:grab_clone/view/core/core.dart';
+import 'package:grab_clone/view/page/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark
   ));
 
-  runApp(MyApp());
+  runApp(BlocProvider(create: (_)=>MainPageCubit()..startApp(),child: MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +29,16 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.green,
           ),
-          home: Home(),
+          home: BlocBuilder<MainPageCubit,MainPageState>(
+            builder: (context, state) {
+              if(state is MainPageLoaded)
+                return SplashScreen();
+              if(state is MainPageSuccess)
+                return Core();
+              return Container();
+            }
+          ),
+          // home: Home(),
         ));
   }
 }

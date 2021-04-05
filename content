@@ -1,0 +1,28 @@
+Base design Grab v5.142.0 22/03/2021
+
+- lock screen orientation to portrait
+- transparent statusBar
+- dark statusBar icon
+- slicing splashScreen
+
+- slicing landing page
+- cubit & bloc state management
+- blocObserver
+- navigator
+- dummy tab
+- dummy detail page
+- api request
+- pull to refresh
+- loading state
+- handle connection error
+- unit test
+    - bloc test
+    - api test
+        - mockito
+- widget test
+
+- swipe to change tab
+- null safety
+
+-----------------------
+- test another device
