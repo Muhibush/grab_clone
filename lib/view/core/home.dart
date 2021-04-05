@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grab_clone/view/core/widgets/features.dart';
 import 'file:///D:/lab/grab_clone/lib/view/core/widgets/header.dart';
 import 'package:grab_clone/view/core/widgets/savings.dart';
 
@@ -18,11 +19,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
       children: [
         Header(),
         Savings(),
-        Container(
-          color: Colors.white,
-          height: 490.w,
-          width: 1.sw,
-        ),
+        Features(),
         SizedBox(
           height: 49.w,
         ),
