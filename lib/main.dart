@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/bloc/main_page_cubit.dart';
+import 'package:grab_clone/bloc/navbar_control_cubit.dart';
 import 'package:grab_clone/view/core/core.dart';
 import 'package:grab_clone/view/page/splash_screen.dart';
 
@@ -11,11 +12,13 @@ void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.dark
-  ));
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark));
 
-  runApp(BlocProvider(create: (_)=>MainPageCubit()..startApp(),child: MyApp(),));
+  runApp(BlocProvider(
+    create: (_) => MainPageCubit()..startApp(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,21 +27,20 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         designSize: Size(1080, 1920),
         allowFontScaling: false,
-        builder: ()=>MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.green,
-          ),
-          home: BlocBuilder<MainPageCubit,MainPageState>(
-            builder: (context, state) {
-              if(state is MainPageLoaded)
-                return SplashScreen();
-              if(state is MainPageSuccess)
-                return Core();
-              return Container();
-            }
-          ),
-          // home: Home(),
-        ));
+        builder: () => MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                primarySwatch: Colors.green,
+              ),
+              home: BlocBuilder<MainPageCubit, MainPageState>(
+                  builder: (context, state) {
+                if (state is MainPageLoaded) return SplashScreen();
+                if (state is MainPageSuccess)
+                  return BlocProvider(
+                      create: (BuildContext context) => NavbarControlCubit(),
+                      child: Core());
+                return Container();
+              }),
+            ));
   }
 }
