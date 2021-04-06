@@ -37,8 +37,7 @@ class _CoreState extends State<Core> {
               BlocBuilder<NavbarControlCubit, bool>(builder: (context, state) {
                 return AnimatedPositionedDirectional(
                   duration: Duration(milliseconds: 300),
-                  bottom: state ? 0 : -60,
-                  height: 60,
+                  bottom: state ? 0 : -72,
                   width: 1.sw,
                   child: Container(
                     decoration: BoxDecoration(
@@ -53,50 +52,35 @@ class _CoreState extends State<Core> {
                         labelPadding: EdgeInsets.all(0),
                         labelStyle: TextStyle(fontSize: 34.sp),
                         tabs: [
-                          Container(
-                            height: 60,
-                            child: Tab(
-                              icon: ImageIcon(
-                                  AssetImage('assets/icons/home@2x.png')),
-                              iconMargin: EdgeInsets.all(8),
-                              text: 'Home',
-                            ),
+                          Tab(
+                            icon: ImageIcon(
+                                AssetImage('assets/icons/home@2x.png')),
+                            iconMargin: EdgeInsets.all(8),
+                            text: 'Home',
                           ),
-                          Container(
-                            height: 60,
-                            child: Tab(
-                              icon: ImageIcon(
-                                  AssetImage('assets/icons/activity@2x.png')),
-                              iconMargin: EdgeInsets.all(8),
-                              text: 'Activity',
-                            ),
+                          Tab(
+                            icon: ImageIcon(
+                                AssetImage('assets/icons/activity@2x.png')),
+                            iconMargin: EdgeInsets.all(8),
+                            text: 'Activity',
                           ),
-                          Container(
-                            height: 60,
-                            child: Tab(
-                              icon: ImageIcon(
-                                  AssetImage('assets/icons/payment@2x.png')),
-                              iconMargin: EdgeInsets.all(8),
-                              text: 'Payment',
-                            ),
+                          Tab(
+                            icon: ImageIcon(
+                                AssetImage('assets/icons/payment@2x.png')),
+                            iconMargin: EdgeInsets.all(8),
+                            text: 'Payment',
                           ),
-                          Container(
-                            height: 60,
-                            child: Tab(
-                              icon: ImageIcon(
-                                  AssetImage('assets/icons/messages@2x.png')),
-                              iconMargin: EdgeInsets.all(8),
-                              text: 'Messages',
-                            ),
+                          Tab(
+                            icon: ImageIcon(
+                                AssetImage('assets/icons/messages@2x.png')),
+                            iconMargin: EdgeInsets.all(8),
+                            text: 'Messages',
                           ),
-                          Container(
-                            height: 60,
-                            child: Tab(
-                              icon: ImageIcon(
-                                  AssetImage('assets/icons/account@2x.png')),
-                              iconMargin: EdgeInsets.all(8),
-                              text: 'Account',
-                            ),
+                          Tab(
+                            icon: ImageIcon(
+                                AssetImage('assets/icons/account@2x.png')),
+                            iconMargin: EdgeInsets.all(8),
+                            text: 'Account',
                           ),
                         ]),
                   ),
