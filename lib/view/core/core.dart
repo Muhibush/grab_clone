@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grab_clone/bloc/navbar_control_cubit.dart';
+import 'package:grab_clone/bloc/status_bar_control_cubit.dart';
 import 'package:grab_clone/view/core/dummy_tab.dart';
 import 'package:grab_clone/view/core/home.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -101,6 +102,20 @@ class _CoreState extends State<Core> {
                   ),
                 );
               }),
+              Align(
+                alignment: Alignment.topCenter,
+                child: BlocBuilder<StatusBarControlCubit, double>(
+                    builder: (context, state) {
+                  return Opacity(
+                    opacity: state,
+                    child: Container(
+                      color: Colors.white.withOpacity(1),
+                      width: 1.sw,
+                      height: MediaQuery.of(context).padding.top,
+                    ),
+                  );
+                }),
+              )
             ],
           ),
         ));

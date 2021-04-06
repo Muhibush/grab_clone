@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grab_clone/bloc/navbar_control_cubit.dart';
+import 'package:grab_clone/bloc/status_bar_control_cubit.dart';
 import 'package:grab_clone/view/core/widgets/discover.dart';
 import 'package:grab_clone/view/core/widgets/features.dart';
 import 'package:grab_clone/view/core/widgets/header.dart';
 import 'package:grab_clone/view/core/widgets/savings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,6 +37,9 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
         isVisible = true;
         BlocProvider.of<NavbarControlCubit>(context).setVisibility(isVisible);
       }
+
+      BlocProvider.of<StatusBarControlCubit>(context)
+          .setOpacity(_scrollController.position.pixels / 109.w);
     });
   }
 

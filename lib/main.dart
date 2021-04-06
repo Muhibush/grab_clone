@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/bloc/main_page_cubit.dart';
 import 'package:grab_clone/bloc/navbar_control_cubit.dart';
+import 'package:grab_clone/bloc/status_bar_control_cubit.dart';
 import 'package:grab_clone/view/core/core.dart';
 import 'package:grab_clone/view/page/splash_screen.dart';
 
@@ -36,9 +37,14 @@ class MyApp extends StatelessWidget {
                   builder: (context, state) {
                 if (state is MainPageLoaded) return SplashScreen();
                 if (state is MainPageSuccess)
-                  return BlocProvider(
+                  return MultiBlocProvider(providers: [
+                    BlocProvider<NavbarControlCubit>(
                       create: (BuildContext context) => NavbarControlCubit(),
-                      child: Core());
+                    ),
+                    BlocProvider<StatusBarControlCubit>(
+                      create: (BuildContext context) => StatusBarControlCubit(),
+                    ),
+                  ], child: Core());
                 return Container();
               }),
             ));
