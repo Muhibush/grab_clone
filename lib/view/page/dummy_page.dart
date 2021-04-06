@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DummyPage extends StatelessWidget {
-  final String text;
+  final String? text;
 
-  const DummyPage({Key key, this.text}) : super(key: key);
+  const DummyPage({Key? key, this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class DummyPage extends StatelessWidget {
       body: Container(
         alignment: Alignment.center,
         child: Text(
-          "Page\n" + text,
+          "Page\n" + text!,
           textAlign: TextAlign.center,
         ),
       ),

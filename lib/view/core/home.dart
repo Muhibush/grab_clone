@@ -23,9 +23,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
-  ScrollController _scrollController;
-  bool isVisible;
-  Completer<void> _refreshCompleter;
+  ScrollController? _scrollController;
+  bool? isVisible;
+  Completer<void>? _refreshCompleter;
 
   @override
   void initState() {
@@ -33,28 +33,28 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
     _scrollController = ScrollController();
     _refreshCompleter = Completer<void>();
     isVisible = true;
-    _scrollController.addListener(() {
-      if (isVisible &&
-          _scrollController.position.userScrollDirection ==
+    _scrollController!.addListener(() {
+      if (isVisible! &&
+          _scrollController!.position.userScrollDirection ==
               ScrollDirection.reverse) {
         isVisible = false;
-        BlocProvider.of<NavbarControlCubit>(context).setVisibility(isVisible);
+        BlocProvider.of<NavbarControlCubit>(context).setVisibility(isVisible!);
       }
-      if (!isVisible &&
-          _scrollController.position.userScrollDirection ==
+      if (!isVisible! &&
+          _scrollController!.position.userScrollDirection ==
               ScrollDirection.forward) {
         isVisible = true;
-        BlocProvider.of<NavbarControlCubit>(context).setVisibility(isVisible);
+        BlocProvider.of<NavbarControlCubit>(context).setVisibility(isVisible!);
       }
 
       BlocProvider.of<StatusBarControlCubit>(context)
-          .setOpacity(_scrollController.position.pixels / 109.w);
+          .setOpacity(_scrollController!.position.pixels / 109.w);
     });
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    _scrollController!.dispose();
     super.dispose();
   }
 
@@ -64,7 +64,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
     return RefreshIndicator(
       onRefresh: () {
         BlocProvider.of<HomeBloc>(context).add(HomeRefreshed());
-        return _refreshCompleter.future;
+        return _refreshCompleter!.future;
       },
       child: ListView(
         controller: _scrollController,

@@ -1,8 +1,8 @@
 class DiscoveryModel {
-  String id;
-  String image;
-  String title;
-  String date;
+  String? id;
+  String? image;
+  String? title;
+  String? date;
 
   DiscoveryModel({this.id, this.image, this.title, this.date});
 

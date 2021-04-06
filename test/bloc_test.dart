@@ -4,15 +4,16 @@ import 'package:grab_clone/bloc/navbar_control_cubit.dart';
 import 'package:grab_clone/bloc/status_bar_control_cubit.dart';
 import 'package:grab_clone/models/discovery_model.dart';
 import 'package:grab_clone/repository/discovery_repository.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:bloc_test/bloc_test.dart';
+import 'bloc_test.mocks.dart';
 
-class MockDiscoveryRepository extends Mock implements DiscoveryRepository {}
-
+@GenerateMocks([DiscoveryRepository])
 void main() {
   group('StatusBarControlCubit', () {
-    StatusBarControlCubit statusBarControlCubit;
+    late StatusBarControlCubit statusBarControlCubit;
 
     setUp(() {
       statusBarControlCubit = StatusBarControlCubit();
@@ -25,7 +26,7 @@ void main() {
     blocTest(
       'emits 1.0 when setOpacity >= 1.0',
       build: () => statusBarControlCubit,
-      act: (bloc) => bloc
+      act: (dynamic bloc) => bloc
         ..setOpacity(0.2)
         ..setOpacity(1.0)
         ..setOpacity(2.0)
@@ -36,7 +37,7 @@ void main() {
   });
 
   group('NavbarControlCubit', () {
-    NavbarControlCubit navbarControlCubit;
+    late NavbarControlCubit navbarControlCubit;
 
     setUp(() {
       navbarControlCubit = NavbarControlCubit();
@@ -49,7 +50,7 @@ void main() {
     blocTest(
       'emits equal value from setVisibility',
       build: () => navbarControlCubit,
-      act: (bloc) => bloc
+      act: (dynamic bloc) => bloc
         ..setVisibility(true)
         ..setVisibility(false)
         ..setVisibility(false)
@@ -61,7 +62,7 @@ void main() {
   });
 
   group('MainPageCubit', () {
-    MainPageCubit mainPageCubit;
+    late MainPageCubit mainPageCubit;
 
     setUp(() {
       mainPageCubit = MainPageCubit();
@@ -74,7 +75,7 @@ void main() {
     blocTest(
       'emits equal value from setVisibility',
       build: () => mainPageCubit,
-      act: (bloc) => bloc.startApp(),
+      act: (dynamic bloc) => bloc.startApp(),
       expect: () => [MainPageSuccess()],
     );
   });
@@ -94,7 +95,7 @@ void main() {
     blocTest(
       'emits HomeLoadSuccess when HomeStarted and HomeRefreshed success get data',
       build: () => homeBloc,
-      act: (bloc) => bloc..add(HomeStarted())..add(HomeRefreshed()),
+      act: (dynamic bloc) => bloc..add(HomeStarted())..add(HomeRefreshed()),
       expect: () => [
         HomeLoadInProgress(),
         HomeLoadSuccess(result),
@@ -109,12 +110,12 @@ void main() {
     final homeBloc = HomeBloc(mockDiscoveryRepository);
 
     when(mockDiscoveryRepository.getDiscoveryList())
-        .thenAnswer((_) async => throw "error connection");
+        .thenAnswer(((_) async => throw "error connection"));
 
     blocTest(
       'emits HomeLoadSuccess when HomeStarted and HomeRefreshed failed get data',
       build: () => homeBloc,
-      act: (bloc) => bloc..add(HomeStarted())..add(HomeRefreshed()),
+      act: (dynamic bloc) => bloc..add(HomeStarted())..add(HomeRefreshed()),
       expect: () => [
         HomeLoadInProgress(),
         HomeLoadFailure(),

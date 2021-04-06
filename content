@@ -19,6 +19,7 @@ Features    :
 - cubit & bloc state management
 - handle loading state
 - handle connection error
+- migrated to null safety
 - unit test
     - bloc & cubit test
     - mock api using mockito

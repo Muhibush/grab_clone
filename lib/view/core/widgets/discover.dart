@@ -6,9 +6,9 @@ import 'package:grab_clone/view/core/widgets/discover_item.dart';
 import 'package:grab_clone/view/page/dummy_page.dart';
 
 class Discover extends StatelessWidget {
-  final List<DiscoveryModel> discoveries;
+  final List<DiscoveryModel>? discoveries;
 
-  const Discover({Key key, this.discoveries}) : super(key: key);
+  const Discover({Key? key, this.discoveries}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -85,10 +85,10 @@ class Discover extends StatelessWidget {
               childAspectRatio: 486 / 735,
               crossAxisSpacing: 36.w,
               mainAxisSpacing: 0),
-          itemCount: discoveries.length,
+          itemCount: discoveries!.length,
           itemBuilder: (context, index) {
             return DiscoverItem(
-              text: discoveries[index].title,
+              text: discoveries![index].title,
             );
           },
         ),

@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/view/page/dummy_page.dart';
 
 class FeatureItem extends StatelessWidget {
-  final String text;
-  final String asset;
+  final String? text;
+  final String? asset;
 
-  const FeatureItem({Key key, this.text, this.asset}) : super(key: key);
+  const FeatureItem({Key? key, this.text, this.asset}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,7 +25,7 @@ class FeatureItem extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              asset,
+              asset!,
               width: 148.w,
               height: 148.w,
               fit: BoxFit.cover,
@@ -34,7 +34,7 @@ class FeatureItem extends StatelessWidget {
             Container(
               width: 250.w,
               child: AutoSizeText(
-                text,
+                text!,
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 minFontSize: 1,
