@@ -1,6 +1,6 @@
 # grab_clone
 
-Grab clone app for code test on machtwatch
+Grab clone app by Muhibush Shulhi Muhammad
 
 ## Getting Started
 
