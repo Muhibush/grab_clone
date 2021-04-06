@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/view/page/dummy_page.dart';
 
-class Header extends StatelessWidget {
+class HeaderErrorConnection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF0f65fa),
+      color: Color(0xFFfff1f1),
       height: 491.w,
       width: 1.sw,
       child: Column(
@@ -75,77 +75,53 @@ class Header extends StatelessWidget {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => DummyPage(
-                            text: "Buka Lazada Amanah",
-                          )));
-            },
+          Container(
+            height: 266.w,
+            alignment: Alignment.center,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.only(
                     left: 60.w,
                   ),
-                  width: 678.w,
+                  width: 777.w,
                   height: 185.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       AutoSizeText(
-                        'Buka Lazada Amanah Sekarang',
+                        'No Connection Found',
                         maxLines: 2,
                         minFontSize: 1,
                         style: TextStyle(
-                          fontSize: 50.sp,
-                          color: Colors.white,
+                          fontSize: 55.sp,
+                          color: Color(0xFFa22916),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Container(
-                            width: 614.w,
-                            child: AutoSizeText(
-                              'Kebutuhan Muslim Terpercaya ...',
-                              maxLines: 1,
-                              minFontSize: 1,
-                              style: TextStyle(
-                                fontSize: 42.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 14.w),
-                          Container(
-                            width: 50.w,
-                            height: 50.w,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0xFF105de9)),
-                            child: Icon(
-                              Icons.keyboard_arrow_right,
-                              color: Colors.white,
-                              size: 45.w,
-                            ),
-                          )
-                        ],
+                      AutoSizeText(
+                        'Please check your network connection.',
+                        maxLines: 2,
+                        minFontSize: 1,
+                        style: TextStyle(
+                          fontSize: 42.sp,
+                          color: Color(0xFFa22916),
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Image.asset(
-                  'assets/images/lazada.png',
-                  width: 280.w,
+                  'assets/icons/connection_error@2x.png',
+                  width: 162.w,
                   fit: BoxFit.fitWidth,
                 ),
+                SizedBox(
+                  width: 81.w,
+                )
               ],
             ),
           )

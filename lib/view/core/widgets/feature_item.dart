@@ -22,7 +22,6 @@ class FeatureItem extends StatelessWidget {
       child: Container(
         width: 250.w,
         height: 275.w,
-        // color: Colors.red,
         child: Column(
           children: [
             Image.asset(

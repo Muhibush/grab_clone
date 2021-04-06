@@ -3,7 +3,7 @@ import 'package:grab_clone/models/discovery_model.dart';
 import 'dart:convert';
 
 class DiscoveryRepository {
-  Future<List<DiscoveryModel>> getActionsRanking() async {
+  Future<List<DiscoveryModel>> getDiscoveryList() async {
     try {
       List<DiscoveryModel> result = [];
       Response<String> response = await Dio().get(

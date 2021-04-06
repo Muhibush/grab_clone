@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grab_clone/bloc/home_bloc.dart';
 import 'package:grab_clone/bloc/main_page_cubit.dart';
 import 'package:grab_clone/bloc/navbar_control_cubit.dart';
 import 'package:grab_clone/bloc/status_bar_control_cubit.dart';
+import 'package:grab_clone/repository/discovery_repository.dart';
 import 'package:grab_clone/view/core/core.dart';
 import 'package:grab_clone/view/page/splash_screen.dart';
 
@@ -43,6 +45,10 @@ class MyApp extends StatelessWidget {
                     ),
                     BlocProvider<StatusBarControlCubit>(
                       create: (BuildContext context) => StatusBarControlCubit(),
+                    ),
+                    BlocProvider<HomeBloc>(
+                      create: (BuildContext context) =>
+                          HomeBloc(DiscoveryRepository())..add(HomeStarted()),
                     ),
                   ], child: Core());
                 return Container();

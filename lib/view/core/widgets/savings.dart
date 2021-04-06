@@ -36,7 +36,6 @@ class Savings extends StatelessWidget {
                 SizedBox(width: 22.w),
                 Container(
                   height: 50.w,
-                  // color: Colors.red.shade50,
                   child: Row(
                     children: [
                       Align(
@@ -97,7 +96,6 @@ class Savings extends StatelessWidget {
                 SizedBox(width: 22.w),
                 Container(
                   height: 50.w,
-                  // color: Colors.red.shade50,
                   child: Row(
                     children: [
                       Text(

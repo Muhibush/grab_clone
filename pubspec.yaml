@@ -74,6 +74,7 @@ flutter:
     - assets/icons/read@2x.png
     - assets/icons/search@2x.png
     - assets/icons/wallet@2x.png
+    - assets/icons/connection_error@2x.png
     - assets/images/item.png
     - assets/images/lazada.png
     - assets/images/lazada_banner.png

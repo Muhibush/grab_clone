@@ -18,7 +18,6 @@ class DiscoverItem extends StatelessWidget {
       child: Container(
         width: 486.w,
         height: 735.w,
-        // color: Colors.red,
         child: Column(
           children: [
             ClipRRect(
@@ -33,7 +32,6 @@ class DiscoverItem extends StatelessWidget {
             Container(
               width: 486.w,
               height: 106.w,
-              // color: Colors.green,
               child: AutoSizeText(
                 'Kejar diskon menawan buat puas seharian',
                 maxLines: 2,
@@ -49,7 +47,6 @@ class DiscoverItem extends StatelessWidget {
             Container(
                 width: 486.w,
                 height: 47.w,
-                // color: Colors.green,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
