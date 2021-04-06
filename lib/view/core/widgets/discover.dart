@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/view/core/widgets/discover_item.dart';
+import 'package:grab_clone/view/page/dummy_page.dart';
 
 class Discover extends StatelessWidget {
   @override
@@ -9,12 +10,22 @@ class Discover extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 55.w),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(10.w),
-          child: Image.asset(
-            'assets/images/lazada_banner.png',
-            width: 1010.w,
-            height: 503.w,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => DummyPage(
+                          text: "Lazada Ramadhan Sale!",
+                        )));
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10.w),
+            child: Image.asset(
+              'assets/images/lazada_banner.png',
+              width: 1010.w,
+              height: 503.w,
+            ),
           ),
         ),
         SizedBox(height: 25.w),
