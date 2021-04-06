@@ -1,5 +1,5 @@
 name: grab_clone
-description: Grab clone app for code test on machtwatch
+description: Grab clone app by Muhibush Shulhi Muhammad
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -35,8 +35,11 @@ dependencies:
   dio: ^4.0.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+#  flutter_test:
+#    sdk: flutter
+  bloc_test: ^8.0.0
+  test: ^1.16.8
+  mockito: ^5.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

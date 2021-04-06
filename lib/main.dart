@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
               ),
               home: BlocBuilder<MainPageCubit, MainPageState>(
                   builder: (context, state) {
-                if (state is MainPageLoaded) return SplashScreen();
+                if (state is MainPageLoadInProgress) return SplashScreen();
                 if (state is MainPageSuccess)
                   return MultiBlocProvider(providers: [
                     BlocProvider<NavbarControlCubit>(

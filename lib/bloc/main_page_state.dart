@@ -6,6 +6,6 @@ abstract class MainPageState extends Equatable {
   List<Object> get props => [];
 }
 
-class MainPageLoaded extends MainPageState {}
+class MainPageLoadInProgress extends MainPageState {}
 
 class MainPageSuccess extends MainPageState {}
