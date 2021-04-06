@@ -1,10 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grab_clone/models/discovery_model.dart';
 import 'package:grab_clone/view/core/widgets/discover_item.dart';
 import 'package:grab_clone/view/page/dummy_page.dart';
 
 class Discover extends StatelessWidget {
+  final List<DiscoveryModel> discoveries;
+
+  const Discover({Key key, this.discoveries}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -80,9 +85,11 @@ class Discover extends StatelessWidget {
               childAspectRatio: 486 / 735,
               crossAxisSpacing: 36.w,
               mainAxisSpacing: 0),
-          itemCount: 12,
+          itemCount: discoveries.length,
           itemBuilder: (context, index) {
-            return DiscoverItem();
+            return DiscoverItem(
+              text: discoveries[index].title,
+            );
           },
         ),
         Container(

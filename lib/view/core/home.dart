@@ -90,7 +90,10 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
             Widget result = Container();
 
             if (state is HomeLoadInProgress) result = DiscoverInProgress();
-            if (state is HomeLoadSuccess) result = Discover();
+            if (state is HomeLoadSuccess)
+              result = Discover(
+                discoveries: state.discoveries,
+              );
             if (state is HomeLoadFailure) result = DiscoverErrorConnection();
 
             return result;

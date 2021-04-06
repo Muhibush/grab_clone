@@ -4,6 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grab_clone/view/page/dummy_page.dart';
 
 class DiscoverItem extends StatelessWidget {
+  final String text;
+
+  const DiscoverItem({Key key, this.text}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -12,7 +16,7 @@ class DiscoverItem extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (_) => DummyPage(
-                      text: "Discover Item",
+                      text: text,
                     )));
       },
       child: Container(
@@ -33,7 +37,7 @@ class DiscoverItem extends StatelessWidget {
               width: 486.w,
               height: 106.w,
               child: AutoSizeText(
-                'Kejar diskon menawan buat puas seharian',
+                text,
                 maxLines: 2,
                 minFontSize: 1,
                 style: TextStyle(

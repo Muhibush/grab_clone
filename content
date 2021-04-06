@@ -13,12 +13,12 @@ Features    :
 - swipe to change tab
 - navigator
 - dummy detail page
-
-- cubit & bloc state management
 - api request
 - pull to refresh
+- cubit & bloc state management
 - loading state
 - handle connection error
+
 - unit test
     - bloc test
     - api test
@@ -26,6 +26,5 @@ Features    :
 - widget test
 
 - null safety
-- font style
 -----------------------
 - test another device
