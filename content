@@ -1,6 +1,7 @@
 Base design : Grab v5.142.0 22/03/2021
 Due date    : Wed 07/04/2020 09:20 AM
 
+Features    :
 - lock screen orientation to portrait up
 - transparent statusBar
 - dark statusBar icon
@@ -10,11 +11,10 @@ Due date    : Wed 07/04/2020 09:20 AM
 - slicing landing page
 - dummy tab
 - swipe to change tab
-
-- cubit & bloc state management
-- blocObserver
 - navigator
 - dummy detail page
+
+- cubit & bloc state management
 - api request
 - pull to refresh
 - loading state

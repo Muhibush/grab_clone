@@ -9,7 +9,10 @@ class DummyTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text(text),
+      child: Text(
+        "Page\n" + text,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

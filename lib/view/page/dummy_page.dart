@@ -11,7 +11,10 @@ class DummyPage extends StatelessWidget {
       appBar: AppBar(),
       body: Container(
         alignment: Alignment.center,
-        child: Text(text),
+        child: Text(
+          "Page\n" + text,
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
