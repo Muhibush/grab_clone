@@ -4,9 +4,9 @@ Mobile App, web, and Desktop from a single codebase. Thanks to Google For making
 
 <img src= "https://user-images.githubusercontent.com/24708307/117786153-6b862700-b26f-11eb-9c59-fecd64b1af43.jpg" width =900>
 
-Base design: Grab v5.142.0 22/03/2021
+Base Design : Grab v5.142.0 22/03/2021
 
-Clone Features :
+Features :
 - lock the screen orientation to portrait up
 - transparent statusBar
 - dark status bar icon
